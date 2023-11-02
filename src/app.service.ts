@@ -4,7 +4,7 @@ import * as admin from 'firebase-admin';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello World!';
+    return 'code by: JDev Digital Team!';
   }
 
   private readonly db: FirebaseFirestore.Firestore;

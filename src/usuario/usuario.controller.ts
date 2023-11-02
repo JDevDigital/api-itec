@@ -20,7 +20,7 @@ export class UsuarioController {
   @Post('cadastro')
   public async cadastro(
     @Body() usuario: CadastroDTO,
-  ): Promise<MostrarDTO | void> {
+  ): Promise<MostrarDTO | Error> {
     return await this.usuarioService.cadastro(usuario);
   }
 
