@@ -11,5 +11,5 @@ export class MostrarDTO {
   rg: string;
   orgaoExpedidor: string;
   contaBancaria?: string;
-  nivelUsuario: number;
+  setor: number;
 }

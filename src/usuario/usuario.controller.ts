@@ -10,7 +10,9 @@ import {
 import { UsuarioService } from './usuario.service';
 import { MostrarDTO } from 'src/usuario/DTO/mostrar.dto';
 import { CadastroDTO } from './DTO/cadastro.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Usuários')
 @Controller('usuario')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
@@ -40,7 +42,7 @@ export class UsuarioController {
     @Query('nivel') nivel: string,
   ): Promise<MostrarDTO[] | void> {
     console.log(nivel);
-    return await this.usuarioService.buscarPorNivel();
+    return await this.usuarioService.buscarPorSetor();
   }
 
   @Put('editar-usuario')
@@ -50,7 +52,7 @@ export class UsuarioController {
 
   @Put('editar-nivel')
   public async atualizarNivel(): Promise<MostrarDTO | void> {
-    return await this.usuarioService.atualizarNivel();
+    return await this.usuarioService.atualizarSetor();
   }
 
   @Delete(':id')
