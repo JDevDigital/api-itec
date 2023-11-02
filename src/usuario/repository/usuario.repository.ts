@@ -40,6 +40,7 @@ export class UsuarioRepository {
       orgaoExpedidor: snapshot.orgaoExpedidor,
       contaBancaria: snapshot.contaBancaria,
       setor: snapshot.setor,
+      telefone: snapshot.telefone,
     };
 
     return usuario;
@@ -65,6 +66,7 @@ export class UsuarioRepository {
       orgaoExpedidor: snapshot.docs[0].data().orgaoExpedidor,
       contaBancaria: snapshot.docs[0].data().contaBancaria,
       setor: snapshot.docs[0].data().setor,
+      telefone: snapshot.docs[0].data().telefone,
     };
 
     return usuario;
@@ -94,6 +96,7 @@ export class UsuarioRepository {
         orgaoExpedidor: snapshot.docs[0].data().orgaoExpedidor,
         contaBancaria: snapshot.docs[0].data().contaBancaria,
         setor: snapshot.docs[0].data().setor,
+        telefone: snapshot.docs[0].data().telefone,
       };
 
       usuarios.push(usuario);
@@ -111,7 +114,7 @@ export class UsuarioRepository {
     return await this.buscarPorID(id);
   }
 
-  async atualizarNivel(id: string, setorNovo: string): Promise<MostrarDTO> {
+  async atualizarSetor(id: string, setorNovo: string): Promise<MostrarDTO> {
     const usuarioRef = this.db.collection(this.collection).doc(id);
     await usuarioRef.update({ setor: setorNovo });
     return await this.buscarPorID(id);
