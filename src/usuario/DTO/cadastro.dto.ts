@@ -1,4 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
+import { Setor } from '../setor.enum';
+import { Field } from '@nestjs/graphql';
 
 export class CadastroDTO {
   @ApiProperty()
@@ -9,6 +11,9 @@ export class CadastroDTO {
 
   @ApiProperty()
   email: string;
+
+  @ApiProperty()
+  telefone: string;
 
   @ApiProperty()
   senha: string;
@@ -29,7 +34,8 @@ export class CadastroDTO {
   estado?: string;
 
   @ApiProperty()
-  setor: string;
+  @Field(() => Setor)
+  setor: Setor;
 
   @ApiProperty()
   cpf: string;

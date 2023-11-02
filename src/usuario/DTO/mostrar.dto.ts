@@ -2,6 +2,7 @@ export class MostrarDTO {
   id: string;
   nome: string;
   email: string;
+  telefone: string;
   dataNascimento: string;
   endereco?: string;
   cep?: number;
