@@ -14,11 +14,11 @@ export class UsuarioService {
 
   async buscarPorEmail(): Promise<MostrarDTO | void> {}
 
-  async buscarPorNivel(): Promise<MostrarDTO[] | void> {}
+  async buscarPorSetor(): Promise<MostrarDTO[] | void> {}
 
   async atualizarDados(): Promise<MostrarDTO | void> {}
 
-  async atualizarNivel(): Promise<MostrarDTO | void> {}
+  async atualizarSetor(): Promise<MostrarDTO | void> {}
 
   async remover() {}
 }
