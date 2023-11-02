@@ -1,14 +1,25 @@
-import { Controller, Delete, Get, Post, Put, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Post,
+  Put,
+  Query,
+} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { MostrarDTO } from 'src/usuario/DTO/mostrar.dto';
+import { CadastroDTO } from './DTO/cadastro.dto';
 
 @Controller('usuario')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
   @Post('cadastro')
-  public async cadastro(): Promise<MostrarDTO | void> {
-    return await this.usuarioService.cadastro();
+  public async cadastro(
+    @Body() usuario: CadastroDTO,
+  ): Promise<MostrarDTO | void> {
+    return await this.usuarioService.cadastro(usuario);
   }
 
   @Get(':id')

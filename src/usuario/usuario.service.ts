@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { MostrarDTO } from 'src/usuario/DTO/mostrar.dto';
+import { CadastroDTO } from './DTO/cadastro.dto';
 
 @Injectable()
 export class UsuarioService {
   constructor() {}
 
-  async cadastro(): Promise<MostrarDTO | void> {}
+  async cadastro(usuario: CadastroDTO): Promise<MostrarDTO | void> {
+    console.log(usuario);
+  }
 
   async buscarPorID(): Promise<MostrarDTO | void> {}
 
